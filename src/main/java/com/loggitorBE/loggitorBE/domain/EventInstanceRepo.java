@@ -29,7 +29,14 @@ public interface EventInstanceRepo extends CrudRepository<EventInstance, Long>{
 	@Query(value = "SELECT COUNT(*) FROM event_instance", nativeQuery = true)
 	int countEventIns();
 	
+	@Query(nativeQuery = true)
+	ArrayList<WeeklyDiagram> getWeeklyWarning();
 	
+	@Query(nativeQuery = true)
+	ArrayList<WeeklyDiagram> getWeeklyCritical();
+	
+	@Query(nativeQuery = true)
+	ArrayList<WeeklyDiagram> getWeeklyError();
 	
 	
 }	

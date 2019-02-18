@@ -48,6 +48,7 @@ import com.loggitorBE.loggitorBE.domain.EventSeverityRepo;
 import com.loggitorBE.loggitorBE.domain.EventsResult;
 import com.loggitorBE.loggitorBE.domain.FixAction;
 import com.loggitorBE.loggitorBE.domain.FixActionRepo;
+import com.loggitorBE.loggitorBE.domain.WeeklyDiagram;
 import com.nexmo.client.NexmoClientException;
 
 @RestController
@@ -463,6 +464,23 @@ public class LoggitorController {
 	public int countEventIns() {
 		return eventInsRepo.countEventIns();
 	}
+	
+	@RequestMapping("/WeeklyWarning")
+	public ArrayList<WeeklyDiagram> getWeeklyWarning() {
+		return eventInsRepo.getWeeklyWarning();
+	}
+	
+	@RequestMapping("/WeeklyCritical")
+	public ArrayList<WeeklyDiagram> getWeeklyCritical() {
+		return eventInsRepo.getWeeklyCritical();
+	}
+	
+	@RequestMapping("/WeeklyError")
+	public ArrayList<WeeklyDiagram> getWeeklyError() {
+		return eventInsRepo.getWeeklyError();
+	}
+	
+	
 	
 	
 }
